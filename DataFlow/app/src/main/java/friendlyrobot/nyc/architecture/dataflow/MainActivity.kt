@@ -15,9 +15,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val viewPager = findViewById<ViewPager2>(R.id.viewPager)
-        val flows = arrayOf<DataFlow>(DataFlow(R.layout.view_friendly_layout, "FriendlyMVP"))
-           // DataFlow(R.layout.view_friendly_layout, "FriendlyMVP2"),
-            //DataFlow(R.layout.view_friendly_layout, "FriendlyMVP3"))
+        val flows = arrayOf<DataFlow>(DataFlow(R.layout.view_friendly_layout, "FriendlyMVP"),
+            DataFlow(R.layout.view_friendly_layout, "FriendlyMVP2"),
+            DataFlow(R.layout.view_friendly_layout, "FriendlyMVP3"))
 
         viewPager.adapter = DataFlowAdapter(flows)
     }

@@ -54,6 +54,8 @@ ext {
             viewpager: '1.0.0-alpha04',
             rxAndroid: '2.1.1',
             rxJava: '2.2.9',
+            timber: '4.7.1',
+            materialComponents: '1.1.0-alpha07',
     ]
 
     gradleDependencies = [
@@ -98,6 +100,7 @@ ext {
             viewModelKtx: "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.viewModelKtx",
             viewModel: "androidx.lifecycle:lifecycle-extensions:$versions.viewModelKtx",
             viewpager: "androidx.viewpager2:viewpager2:$versions.viewpager",
+            materialComponents: "com.google.android.material:material:$versions.materialComponents",
     ]
 
     kivaDependencies = [
@@ -133,6 +136,7 @@ ext {
             rxAndroid: "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
             rxJava: "io.reactivex.rxjava2:rxjava:$versions.rxJava",
             retrofitRxAdapter: "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
+            timber: "com.jakewharton.timber:timber:$versions.timber",
     ]
 
     annotationDependencies = [

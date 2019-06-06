@@ -16,11 +16,7 @@ import java.io.IOException
 
 object AppModule {
 
-    /*
-    val instance: GitHubService by lazy {
-     */
-
-    var store : Store<RedditData, BarCode>? = null
+    private var store : Store<RedditData, BarCode>? = null
 
     fun provideApi() : Api {
         return Retrofit.Builder()
@@ -31,7 +27,6 @@ object AppModule {
             .build()
             .create(Api::class.java)
     }
-
 
     fun provideStore(context: Context) : Store<RedditData, BarCode> {
 
