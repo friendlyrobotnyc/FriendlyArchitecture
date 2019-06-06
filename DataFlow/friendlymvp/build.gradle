@@ -54,7 +54,7 @@ dependencies {
     implementation libraryDependencies.glide
     implementation androidDependencies.materialComponents
 
-    implementation "com.squareup.retrofit2:converter-moshi:2.5.0"
+    implementation libraryDependencies.moshiRetrofit
 
     implementation libraryDependencies.rxAndroid
     implementation libraryDependencies.rxJava

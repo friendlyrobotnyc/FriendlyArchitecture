@@ -56,6 +56,7 @@ ext {
             rxJava: '2.2.9',
             timber: '4.7.1',
             materialComponents: '1.1.0-alpha07',
+            moshiRetrofit: '2.5.0',
     ]
 
     gradleDependencies = [
@@ -137,6 +138,7 @@ ext {
             rxJava: "io.reactivex.rxjava2:rxjava:$versions.rxJava",
             retrofitRxAdapter: "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
             timber: "com.jakewharton.timber:timber:$versions.timber",
+            moshiRetrofit: "com.squareup.retrofit2:converter-moshi:$versions.moshiRetrofit",
     ]
 
     annotationDependencies = [

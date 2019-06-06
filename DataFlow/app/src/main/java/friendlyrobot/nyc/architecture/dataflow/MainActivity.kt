@@ -16,8 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         val viewPager = findViewById<ViewPager2>(R.id.viewPager)
         val flows = arrayOf<DataFlow>(DataFlow(R.layout.view_friendly_layout, "FriendlyMVP"),
-            DataFlow(R.layout.view_friendly_layout, "FriendlyMVP2"),
-            DataFlow(R.layout.view_friendly_layout, "FriendlyMVP3"))
+            DataFlow(R.layout.view_mvvm_layout, "MVVM"))
 
         viewPager.adapter = DataFlowAdapter(flows)
     }
