@@ -10,6 +10,9 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.nytimes.android.external.store3.base.impl.BarCode
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.item_reddit_post.view.*
 
 
@@ -38,7 +41,10 @@ constructor(
         configureRecyclerView()
 
         //would be done via an inject
-        redditPostsPresenter = RedditPostsPresenter(AppModule.provideStore(context))
+        redditPostsPresenter = RedditPostsPresenter(AppModule.provideStore(context),
+            BarCode(RedditData::class.java.simpleName, "aww"),
+            Schedulers.io(),
+            AndroidSchedulers.mainThread())
     }
 
     private fun configureRecyclerView() {
