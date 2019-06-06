@@ -52,6 +52,8 @@ ext {
             nytimesstore: '3.1.1',
             viewModelKtx: '2.2.0-alpha01',
             viewpager: '1.0.0-alpha04',
+            rxAndroid: '2.1.1',
+            rxJava: '2.2.9',
     ]
 
     gradleDependencies = [
@@ -126,7 +128,11 @@ ext {
             nytimesstorecache: "com.nytimes.android:cache3:$versions.nytimesstore",
             nytimesstorekotlin: "com.nytimes.android:store3:$versions.nytimesstore",
             nytimesmiddle: "com.nytimes.android:middleware3:$versions.nytimesstore",
+            nytimesfilesystem: "com.nytimes.android:filesystem3:$versions.nytimesstore",
             nytimesmiddlemoshi: "com.nytimes.android:middleware-moshi3:$versions.nytimesstore",
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
+            rxJava: "io.reactivex.rxjava2:rxjava:$versions.rxJava",
+            retrofitRxAdapter: "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
     ]
 
     annotationDependencies = [

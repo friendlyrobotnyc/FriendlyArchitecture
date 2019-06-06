@@ -27,6 +27,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.core:core-ktx:1.0.2'
@@ -35,6 +36,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation androidDependencies.constraintLayout
+    implementation androidDependencies.recyclerView
+
+    implementation libraryDependencies.retrofitRxAdapter
 
     implementation libraryDependencies.retrofit
     implementation libraryDependencies.okhttp
@@ -43,6 +47,12 @@ dependencies {
     implementation libraryDependencies.nytimesstorekotlin
     implementation libraryDependencies.nytimesmiddle
     implementation libraryDependencies.nytimesmiddlemoshi
+    implementation libraryDependencies.nytimesfilesystem
+
+    implementation "com.squareup.retrofit2:converter-moshi:2.5.0"
+
+    implementation libraryDependencies.rxAndroid
+    implementation libraryDependencies.rxJava
 
     implementation libraryDependencies.moshi
     kapt(libraryDependencies.moshiCodegen)
