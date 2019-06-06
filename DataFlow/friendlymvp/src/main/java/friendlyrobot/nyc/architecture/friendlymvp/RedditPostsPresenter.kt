@@ -3,8 +3,6 @@ package friendlyrobot.nyc.architecture.friendlymvp
 import androidx.lifecycle.Lifecycle
 import com.nytimes.android.external.store3.base.impl.BarCode
 import com.nytimes.android.external.store3.base.impl.Store
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.Types
 import io.reactivex.Observable
 import io.reactivex.Scheduler
 import timber.log.Timber
@@ -41,11 +39,6 @@ class RedditPostsPresenter(private val store: Store<RedditData, BarCode>,
             .subscribe({
                     it ->
                 Timber.e(it.toString())
-
-                val moshi = Moshi.Builder().build()
-                val listType = Types.newParameterizedType(List::class.java, Post::class.java)
-                val stringliteral = moshi.adapter<List<Post>>(listType).toJson(it)
-
                 mvpView?.show(it)
             }, {
                 Timber.e(it.message, it)
@@ -54,10 +47,6 @@ class RedditPostsPresenter(private val store: Store<RedditData, BarCode>,
     }
 
     private fun sanitizeData(redditData: RedditData): Observable<Post> {
-
-        val moshi = Moshi.Builder().build()
-        val stringliteral = moshi.adapter<RedditData>(RedditData::class.java).toJson(redditData)
-
         return Observable.fromIterable(redditData?.data?.children).map { it.data }
     }
 }
