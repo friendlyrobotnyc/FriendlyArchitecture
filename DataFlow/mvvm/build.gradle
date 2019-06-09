@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 android {
-    compileSdkVersion 28
-
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 28
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        compileSdkVersion versions.compileSdk
         versionCode 1
         versionName "1.0"
 
@@ -35,4 +35,22 @@ dependencies {
 
     implementation androidDependencies.constraintLayout
     implementation androidDependencies.recyclerView
+
+    implementation libraryDependencies.retrofitRxAdapter
+
+    implementation libraryDependencies.retrofit
+    implementation libraryDependencies.okhttp
+
+    implementation libraryDependencies.timber
+    implementation libraryDependencies.glide
+    implementation androidDependencies.materialComponents
+    implementation androidDependencies.viewModel
+
+    implementation libraryDependencies.moshiRetrofit
+
+    implementation libraryDependencies.rxAndroid
+    implementation libraryDependencies.rxJava
+
+    implementation libraryDependencies.moshi
+    kapt(libraryDependencies.moshiCodegen)
 }
