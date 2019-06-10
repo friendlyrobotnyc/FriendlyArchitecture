@@ -38,7 +38,7 @@ object AppModule {
 
     private fun providePersistedStore(context: Context) : Store<RedditData, BarCode> {
         return StoreBuilder.parsedWithKey<BarCode, BufferedSource, RedditData>()
-            .fetcher({ provideApi().fetchSubreddit(it.key, "50").map({ it.source()}) })
+            .fetcher { provideApi().fetchSubreddit(it.key, "50").map { body -> body.source()} }
             .persister(newPersister(context))
             .parser(MoshiParserFactory.createSourceParser(Moshi.Builder().build(), RedditData::class.java))
             .open()
@@ -48,5 +48,4 @@ object AppModule {
     private fun newPersister(context: Context): Persister<BufferedSource, BarCode> {
         return SourcePersisterFactory.create(context.cacheDir)
     }
-
 }

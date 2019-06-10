@@ -17,7 +17,7 @@ class PostsViewModel(private val mvvmApi: MvvmApi) : ViewModel() {
         mydata = getRedditData()
     }
 
-    private fun getRedditData() : MutableLiveData<RedditData> {
+    private fun getRedditData(): MutableLiveData<RedditData> {
 
         val mydata = MutableLiveData<RedditData>()
 
@@ -27,8 +27,8 @@ class PostsViewModel(private val mvvmApi: MvvmApi) : ViewModel() {
             }
 
             override fun onResponse(call: Call<RedditData>, response: Response<RedditData>) {
-                if (response.isSuccessful()){
-                    mydata.setValue(response.body());
+                if (response.isSuccessful) {
+                    mydata.value = response.body()
                 }
             }
         })

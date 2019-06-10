@@ -1,2 +1,2 @@
-include ':app', ':friendlymvp', ':mvvm'
+include ':app', ':friendlymvp', ':mvvm', ':mvrx'
 rootProject.name='DataFlow'
