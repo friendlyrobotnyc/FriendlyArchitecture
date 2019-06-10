@@ -2,8 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-android {
 
+android {
     defaultConfig {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
@@ -21,7 +21,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
@@ -32,33 +31,26 @@ dependencies {
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.junitKtx
     androidTestImplementation testDependencies.espresso
-    testImplementation testDependencies.assertj
-    testImplementation testDependencies.mockk
 
     implementation androidDependencies.constraintLayout
     implementation androidDependencies.recyclerView
-
     implementation libraryDependencies.retrofitRxAdapter
-
     implementation libraryDependencies.retrofit
     implementation libraryDependencies.okhttp
-    implementation libraryDependencies.nytimesstore
-    implementation libraryDependencies.nytimesstorecache
-    implementation libraryDependencies.nytimesstorekotlin
-    implementation libraryDependencies.nytimesmiddle
-    implementation libraryDependencies.nytimesmiddlemoshi
-    implementation libraryDependencies.nytimesfilesystem
-
     implementation libraryDependencies.timber
     implementation libraryDependencies.glide
     implementation androidDependencies.materialComponents
-
     implementation libraryDependencies.moshiRetrofit
-
     implementation libraryDependencies.rxAndroid
     implementation libraryDependencies.rxJava
 
+
     implementation libraryDependencies.moshi
     kapt(libraryDependencies.moshiCodegen)
-}
+    implementation libraryDependencies.mvRx
+    implementation(libraryDependencies.epoxy) {
+        exclude group: 'com.android.support'
+    }
+    kapt libraryDependencies.epoxyProcessor
 
+}

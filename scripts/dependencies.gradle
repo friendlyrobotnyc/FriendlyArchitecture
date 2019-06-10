@@ -3,7 +3,7 @@ ext {
     versions = [
             compileSdk: 28,
             targetSdk: 28,
-            minSdk: 19,
+            minSdk: 21,
             versionName: '1.0',
             buildTools: '28.0.3',
             gradlePlugin: '3.6.0-alpha03',
@@ -28,7 +28,8 @@ ext {
             googlePlay: '4.2.0',
             testCoroutines: '1.2.0',
             truth: '1.0.0',
-            junit: '1.0.0',
+            junit: '4.12',
+            junitKtx: '1.0.0',
             testRunner: '1.1.0',
             findBugs: '3.0.2',
 
@@ -57,6 +58,9 @@ ext {
             timber: '4.7.1',
             materialComponents: '1.1.0-alpha07',
             moshiRetrofit: '2.5.0',
+            mvRx: '1.0.1',
+            epoxy: '3.5.1',
+	    assertj: '3.11.1',
     ]
 
     gradleDependencies = [
@@ -77,7 +81,8 @@ ext {
 
     testDependencies = [
             testRunner: "androidx.test:runner:$versions.testRunner",
-            junit: "androidx.test.ext:junit:$versions.junit",
+            junit : "junit:junit:$versions.junit",
+	    junitKtx: "androidx.test.ext:junit:$versions.junitKtx",
             espresso: "androidx.test.espresso:espresso-core:$versions.espresso",
             espressoIntents: "androidx.test.espresso:espresso-intents:$versions.espresso",
             mockk: "io.mockk:mockk:$versions.mockk",
@@ -87,7 +92,8 @@ ext {
             coroutinesTest: "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.testCoroutines",
             findBugs: "com.google.code.findbugs:jsr305:$versions.findBugs",
             orchestrator: "androidx.test:orchestrator:$versions.testRunner",
-            mockwebserver: "com.squareup.okhttp3:mockwebserver:$versions.okhttp"
+            mockwebserver: "com.squareup.okhttp3:mockwebserver:$versions.okhttp",
+	    assertj: "org.assertj:assertj-core:$versions.assertj"
     ]
 
     androidDependencies = [
@@ -102,10 +108,6 @@ ext {
             viewModel: "androidx.lifecycle:lifecycle-extensions:$versions.viewModelKtx",
             viewpager: "androidx.viewpager2:viewpager2:$versions.viewpager",
             materialComponents: "com.google.android.material:material:$versions.materialComponents",
-    ]
-
-    kivaDependencies = [
-
     ]
 
     libraryDependencies = [
@@ -139,6 +141,9 @@ ext {
             retrofitRxAdapter: "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
             timber: "com.jakewharton.timber:timber:$versions.timber",
             moshiRetrofit: "com.squareup.retrofit2:converter-moshi:$versions.moshiRetrofit",
+            mvRx: "com.airbnb.android:mvrx:$versions.mvRx",
+            epoxy: "com.airbnb.android:epoxy:$versions.epoxy",
+            epoxyProcessor: "com.airbnb.android:epoxy-processor:$versions.epoxy",
     ]
 
     annotationDependencies = [

@@ -41,10 +41,12 @@ constructor(
         configureRecyclerView()
 
         //would be done via an inject
-        redditPostsPresenter = RedditPostsPresenter(AppModule.provideStore(context),
+        redditPostsPresenter = RedditPostsPresenter(
+            AppModule.provideStore(context),
             BarCode(RedditData::class.java.simpleName, "aww"),
             Schedulers.io(),
-            AndroidSchedulers.mainThread())
+            AndroidSchedulers.mainThread()
+        )
     }
 
     private fun configureRecyclerView() {
@@ -89,14 +91,16 @@ class PostVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
 class FriendlyAdapter : RecyclerView.Adapter<PostVH>() {
 
     override fun onBindViewHolder(holder: PostVH, position: Int) {
-        items.get(position).let { holder.bind(it) }
+        items.getOrNull(position)?.let { holder.bind(it) }
     }
 
-    var items:MutableList<Post> = mutableListOf()
+    var items: MutableList<Post> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostVH {
-        return PostVH(LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_reddit_post, parent, false))
+        return PostVH(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_reddit_post, parent, false)
+        )
     }
 
     override fun getItemCount(): Int {
