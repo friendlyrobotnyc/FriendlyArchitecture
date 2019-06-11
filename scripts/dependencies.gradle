@@ -60,6 +60,7 @@ ext {
             moshiRetrofit: '2.5.0',
             mvRx: '1.0.1',
             epoxy: '3.5.1',
+            koin: '2.0.1',
 	    assertj: '3.11.1',
     ]
 
@@ -144,6 +145,7 @@ ext {
             mvRx: "com.airbnb.android:mvrx:$versions.mvRx",
             epoxy: "com.airbnb.android:epoxy:$versions.epoxy",
             epoxyProcessor: "com.airbnb.android:epoxy-processor:$versions.epoxy",
+            koin: "org.koin:koin-android:$versions.koin"
     ]
 
     annotationDependencies = [
