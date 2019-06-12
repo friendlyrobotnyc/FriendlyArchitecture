@@ -4,6 +4,7 @@ import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 class SampleApplication : Application() {
@@ -31,6 +32,11 @@ class SampleApplication : Application() {
         // Simple Presenter Factory
         factory { MySimplePresenter(get()) }
 
+
+        scope(named<MainActivity>()) {
+            scoped { ScopedPresenter(get()) }
+        }
+
     }
 
 
@@ -49,3 +55,9 @@ class MySimplePresenter(val repo: HelloRepository) {
 
     fun sayHello() = "${repo.giveHello()} from $this"
 }
+
+class ScopedPresenter(val repo: HelloRepository) {
+
+    fun sayHello() = "${repo.giveHello()} from $this"
+}
+

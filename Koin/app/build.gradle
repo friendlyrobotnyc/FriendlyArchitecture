@@ -34,4 +34,5 @@ dependencies {
 
 
     implementation libraryDependencies.koin
+    implementation libraryDependencies.koinScope
 }

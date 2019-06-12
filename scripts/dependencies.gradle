@@ -145,7 +145,8 @@ ext {
             mvRx: "com.airbnb.android:mvrx:$versions.mvRx",
             epoxy: "com.airbnb.android:epoxy:$versions.epoxy",
             epoxyProcessor: "com.airbnb.android:epoxy-processor:$versions.epoxy",
-            koin: "org.koin:koin-android:$versions.koin"
+            koin: "org.koin:koin-android:$versions.koin",
+            koinScope: "org.koin:koin-android-scope:$versions.koin",
     ]
 
     annotationDependencies = [
